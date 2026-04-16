@@ -1,0 +1,23 @@
+{
+	"id": "cf999cf7ccb4f7ce612fc",
+	"private_key": "GMJArs72taosp4gp39351cBGfLcfN/fqxaDeIZg8Onk=",
+	"public_key": "HnX78CokcbQMyoqwy6XHht3HHqFQqX09TSugnjmj1FE=",
+	"preshared_key": "DZyxRZTWBiOqi+AtNYcL/GO74gGIS9uETlVV+m9dXm0=",
+	"name": "pc7",
+	"telegram_userid": "",
+	"email": "",
+	"allocated_ips": [
+		"10.252.1.1/32"
+	],
+	"allowed_ips": [
+		"0.0.0.0/0",
+		" ::/0"
+	],
+	"extra_allowed_ips": null,
+	"endpoint": "192.168.1.1:51820",
+	"additional_notes": "",
+	"use_server_dns": true,
+	"enabled": true,
+	"created_at": "2026-04-16T21:50:45.77303222Z",
+	"updated_at": "2026-04-16T21:50:45.77303222Z"
+}

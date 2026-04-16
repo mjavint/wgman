@@ -1,0 +1,13 @@
+{
+	"endpoint_address": "192.168.1.1",
+	"dns_servers": [
+		"8.8.8.8",
+		"8.8.4.4"
+	],
+	"mtu": "1420",
+	"persistent_keepalive": "25",
+	"firewall_mark": "",
+	"table": "auto",
+	"config_file_path": "/app/db/wg0.conf",
+	"updated_at": "2026-04-16T21:49:55.027031752Z"
+}
