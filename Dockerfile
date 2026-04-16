@@ -12,7 +12,7 @@ COPY frontend/ ./
 RUN mkdir -p ../backend/assets && npm run build
 
 # ── Stage 2: Build backend ────────────────────────────────────────────────────
-FROM --platform=$BUILDPLATFORM golang:1.23-alpine3.20 AS go-builder
+FROM golang:1.23-alpine3.20 AS go-builder
 LABEL maintainer="wgman"
 
 ARG TARGETOS=linux
@@ -34,7 +34,8 @@ COPY backend/ .
 # Copy compiled frontend assets from stage 1
 COPY --from=frontend-builder /workspace/backend/assets ./assets
 
-RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
+RUN ARCH="${TARGETARCH:-$(go env GOARCH)}" && \
+    CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${ARCH} go build \
     -ldflags="-X 'main.appVersion=${APP_VERSION}' -X 'main.buildTime=${BUILD_TIME}' -X 'main.gitCommit=${GIT_COMMIT}'" \
     -a -o wgman .
 
